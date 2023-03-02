@@ -1,4 +1,15 @@
 .chat-body{
-    max-height: 500px;
-    overflow-y: scroll;
+    height: 350px;
+    overflow-y: auto;
+}
+.users{
+    text-align: center;
+    font-weight: bold;
+    padding: 5px;
+    margin-bottom: 0;
+    color: #fff;
+}
+.wrapper{
+    word-break: break-all;
+    white-space:normal;
 }

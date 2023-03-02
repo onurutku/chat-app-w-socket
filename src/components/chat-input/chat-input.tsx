@@ -7,20 +7,23 @@ export default function ChatInput(props:any){
         setMessage(e.target.value)
     }
     const onSubmit=(e:any)=>{
-        props.props.emit('message', {
-            text: message,
-            userName:user.name,
-            id:props.props.id
-        });
-        setMessage('');
+        if(message){
+            props.props.emit('message', {
+                text: message,
+                userName:user.name,
+                id:props.props.id,
+                color:user.color
+            });
+            setMessage('');
+        }
         e.preventDefault();
     }
     return(
-        <div className="w-50">
+        <div className="">
             <form onSubmit={onSubmit}>
             <div className="input-group mb-3">
                   <input value={message} onChange={onChange} type="text" className="form-control" placeholder="message" />
-                  <button type="submit" className="btn btn-primary">Send</button>
+                  <button disabled={!message} type="submit" className="btn btn-primary ms-1">Send</button>
             </div>
             </form>
         </div>
