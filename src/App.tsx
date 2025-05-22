@@ -8,7 +8,7 @@ import * as io from "socket.io-client";
 function App() {
   
   const [userName,setUserName]:any=useState(JSON.parse(localStorage.getItem('user')!!)?.name?JSON.parse(localStorage.getItem('user')!!)?.name:'');
-  const [socket,setState]:any=useState(io.connect("https://outopaloglu.xyz",{
+  const [socket,setState]:any=useState(io.connect("https://socketserver-1-1tyh.onrender.com",{
       secure:true
     }));
   const [allUsers,setAllUsers]:any=useState() 
